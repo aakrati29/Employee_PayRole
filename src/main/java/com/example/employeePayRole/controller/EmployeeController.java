@@ -2,6 +2,7 @@ package com.example.employeePayRole.controller;
 
 import com.example.employeePayRole.entity.Employee;
 import com.example.employeePayRole.services.EmployeeService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,7 +23,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/add")
-    public Employee addData(@RequestBody Employee employee){
+    public Employee addData(@Valid @RequestBody Employee employee){
         return employeeService.addData(employee);
     }
 
@@ -37,7 +38,7 @@ public class EmployeeController {
     }
 
     @PutMapping("/update/{id}")
-    public Employee updateEmployeeByID(@PathVariable int id, @RequestBody Employee employee){
+    public Employee updateEmployeeByID(@PathVariable int id, @Valid @RequestBody Employee employee){
         return employeeService.updateEmployee(id,employee);
     }
 
