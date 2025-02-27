@@ -22,6 +22,7 @@ public class EmployeeService {
         return employeeRepo.save(employee);
     }
 
+
     public Employee getEmployeeByID(int id){
         log.info("Fetching employee by id{}", id);
         return employeeRepo.findById(id).orElseThrow(()->new RuntimeException("exception handle"));
@@ -32,6 +33,7 @@ public class EmployeeService {
         return employeeRepo.findAll();
     }
 
+
     public Employee updateEmployee(int id, Employee updated){
         Employee old = getEmployeeByID(id);
         old.setName(updated.getName());
@@ -41,6 +43,7 @@ public class EmployeeService {
         log.info("Employee details are updated");
         return employeeRepo.save(old);
     }
+
 
     public void deleteEmployeeBYId(int id){
         log.info("Delete employee by id{}", id);
