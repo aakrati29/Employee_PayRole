@@ -49,4 +49,9 @@ public class EmployeeService {
         log.info("Delete employee by id{}", id);
         employeeRepo.deleteById(id);
     }
+
+    public List<Employee> getEmployeesByDepartment(String department){
+        log.info("Fetching employees from {} department", department);
+        return employeeRepo.findEmployeesByDepartment(department);
+    }
 }
