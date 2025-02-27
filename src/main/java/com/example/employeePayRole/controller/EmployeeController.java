@@ -47,4 +47,9 @@ public class EmployeeController {
         employeeService.deleteEmployeeBYId(id);
     }
 
+
+    @GetMapping("/department/{department}")
+    public List<Employee> getEmployeesByDepartment(@PathVariable String department){
+        return employeeService.getEmployeesByDepartment(department);
+    }
 }
