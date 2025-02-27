@@ -27,4 +27,10 @@ public class Employee {
     @Pattern(regexp = "^[A-Za-z ]+$", message = "Name must contain only alphabets and spaces")
     private String name;
     private String phoneNumber;
+    private Long salary;
+    private String gender;
+    private LocalDate startDate;
+    private String note;
+    private String profilePic;
+    private String department;
 }
